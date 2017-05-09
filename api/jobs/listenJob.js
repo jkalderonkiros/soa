@@ -12,7 +12,7 @@ module.exports = function(agenda) {
 
         // method can be 'every <interval>', 'schedule <when>' or now
         //frequency supports cron strings
-        frequency: 'every 10 minutes',
+        frequency: 'every 5 seconds',
 
         // Jobs options
         //options: {
@@ -26,16 +26,25 @@ module.exports = function(agenda) {
         // execute job
         run: function(job, done) {
           console.log("listenJob");
-          trainCR.getPage().then(function (data) {
-            Log.create({content: data, type: 'trainCR'}).exec(function(err, record) {
-              console.log("Job executed created log!");
+          Type.findOne({name: "cr-train"}).exec(function(err, type) {
+
+            console.log(err, type);
+            if (type === undefined) {
               done();
-            });
-          }).catch(function (err) {
-            Log.create({content: err}).exec(function(err, record) {
-              console.log("Job executed created error log!");
-              done();
-            });
+              return;
+            }
+
+            trainCR.getPage().then(function (data) {
+              Log.create({content: data, type: type.id}).exec(function(err, record) {
+                console.log("Job executed created log!");
+                done();
+              });
+            }).catch(function (err) {
+              Log.create({content: err}).exec(function(err, record) {
+                console.log("Job executed created error log!");
+                done();
+              });
+            })
           })
         },
     };

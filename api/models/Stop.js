@@ -17,7 +17,8 @@ module.exports = {
       required: true
     },
     status: {
-      type: 'integer',
+      type: 'string',
+      num: ['disable', 'enable'],
       required: true
     },
   }

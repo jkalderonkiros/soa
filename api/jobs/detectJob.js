@@ -29,6 +29,7 @@ module.exports = function(agenda) {
 
           Type.findOne({name: "cr-train"}).exec(function(err, type) {
 
+            console.log(err, type);
             if (type === undefined) {
               done();
               return;
@@ -44,11 +45,13 @@ module.exports = function(agenda) {
                 let $ = cheerio.load(logs[0].content);
                 $ = $('div.userContent');
                 let message = $.first().text().trim();
+                message ? message : 'no content found'
 
-                Event.find({type: type.id}).sort({createdAt: -1}).exec(function(err, events) {
+                Event.find({type: type.id}).limit(1).sort({createdAt: -1}).exec(function(err, events) {
                   console.log("events", err, events.length);
                   if (events.length === 0 || (events.length > 0 && events[0].content != message)) {
-                    Event.create({content: message, type: type.id, status: 1}).exec(function(err, event) {
+                    console.log("message", message);
+                    Event.create({content: message, type: type.id}).exec(function(err, event) {
                       console.log("created event!", err, event);
                       //send email and/or notification
                       done();

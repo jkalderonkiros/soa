@@ -14,6 +14,6 @@ module.exports = {
     type: {
       model: 'type',
       required: true
-    }
+    },
   }
 };
