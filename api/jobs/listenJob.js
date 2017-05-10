@@ -8,11 +8,11 @@ module.exports = function(agenda) {
         //name: 'Foo',
 
         // set true to disabled this job
-        disabled: true,
+        disabled: false,
 
         // method can be 'every <interval>', 'schedule <when>' or now
         //frequency supports cron strings
-        frequency: 'every 5 seconds',
+        frequency: 'every 10 minutes',
 
         // Jobs options
         //options: {

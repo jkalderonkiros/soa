@@ -17,9 +17,19 @@ module.exports = {
       unique: true
     },
 
+    first_name: {
+      type: 'string',
+      default: ''
+    },
+
+    last_name: {
+      type: 'string',
+      default: ''
+    },
+
     roles: {
       type: 'array',
-      required: true,
+      //required: true,
       default: []
     },
 

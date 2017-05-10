@@ -8,7 +8,9 @@
 module.exports = {
 
   attributes: {
-
+    coordinates: {
+      type: 'string',
+      required: true
+    }
   }
 };
-

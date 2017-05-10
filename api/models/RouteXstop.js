@@ -12,8 +12,13 @@ module.exports = {
       type: 'date',
       required: true
     },
-    status: {
+    order: {
       type: 'integer',
+      required: true
+    },
+    status: {
+      type: 'string',
+      num: ['disable', 'enable', 'canceled'],
       required: true
     },
   }

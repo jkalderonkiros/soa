@@ -18,8 +18,16 @@ module.exports = {
     },
     status: {
       type: 'string',
-      num: ['disable', 'enable'],
+      num: ['disable', 'enable', 'canceled'],
       required: true
     },
+
+    // Change returned object.
+    toJSON: function () {
+      var obj = this.toObject();
+      obj['type_obj'] = obj.type ? obj.type : null;
+      obj['type'] = obj.type ? obj.type.id : '';
+      return obj;
+    }
   }
 };

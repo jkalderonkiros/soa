@@ -45,7 +45,7 @@ module.exports = function(agenda) {
                 let $ = cheerio.load(logs[0].content);
                 $ = $('div.userContent');
                 let message = $.first().text().trim();
-                message ? message : 'no content found'
+                message = message ? message : 'no content found';
 
                 Event.find({type: type.id}).limit(1).sort({createdAt: -1}).exec(function(err, events) {
                   console.log("events", err, events.length);
