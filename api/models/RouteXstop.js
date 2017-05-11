@@ -8,6 +8,14 @@
 module.exports = {
 
   attributes: {
+    route: {
+      model: 'route',
+      required: true
+    },
+    stop: {
+      model: 'stop',
+      required: true
+    },
     arrival: {
       type: 'date',
       required: true
@@ -18,7 +26,7 @@ module.exports = {
     },
     status: {
       type: 'string',
-      num: ['disable', 'enable', 'canceled'],
+      enum: ['disable', 'enable', 'canceled'],
       required: true
     },
   }

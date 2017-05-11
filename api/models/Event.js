@@ -28,6 +28,11 @@ module.exports = {
       obj['type_obj'] = obj.type ? obj.type : null;
       obj['type'] = obj.type ? obj.type.id : '';
       return obj;
-    }
+    },
+
+    beforeCreate: function (values, next) {
+      delete values.type_obj;
+      next();
+    },
   }
 };

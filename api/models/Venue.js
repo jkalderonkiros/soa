@@ -11,6 +11,11 @@ module.exports = {
     coordinates: {
       type: 'string',
       required: true
-    }
+    },
+    status: {
+      type: 'string',
+      enum: ['disable', 'enable'],
+      required: true
+    },
   }
 };

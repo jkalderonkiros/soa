@@ -41,6 +41,12 @@ module.exports = {
       type: 'string'
     },
 
+    status: {
+      type: 'string',
+      enum: ['disable', 'enable'],
+      required: true
+    },
+
     // Remove the encrypted password from the returned object.
     toJSON: function () {
       var obj = this.toObject();
