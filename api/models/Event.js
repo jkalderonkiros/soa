@@ -34,5 +34,6 @@ module.exports = {
       delete values.type_obj;
       next();
     },
-  }
+  },
+
 };

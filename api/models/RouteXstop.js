@@ -29,5 +29,15 @@ module.exports = {
       enum: ['disable', 'enable', 'canceled'],
       required: true
     },
+
+    // Change returned object.
+    toJSON: function () {
+      var obj = this.toObject();
+      obj['route_obj'] = obj.route ? obj.route : null;
+      obj['route'] = obj.route ? obj.route.id : '';
+      obj['stop_obj'] = obj.stop ? obj.stop : null;
+      obj['stop'] = obj.stop ? obj.stop.id : '';
+      return obj;
+    },
   }
 };
