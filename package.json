@@ -1,7 +1,7 @@
 {
   "name": "soa",
   "private": true,
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "a Sails application",
   "keywords": [],
   "dependencies": {
@@ -32,10 +32,9 @@
     "sails": "~0.12.13",
     "sails-disk": "~0.10.9",
     "sails-hook-jobs": "^0.1.6",
-    "sails-hook-mongo-auto-index": "^0.1.3",
     "sails-mongo": "^0.12.2",
     "sendgrid": "^5.0.0",
-    "forever": "^0.15.3",
+    "forever": "^0.15.3"
   },
   "scripts": {
     "debug": "node debug app.js",
