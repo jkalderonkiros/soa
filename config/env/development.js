@@ -23,8 +23,9 @@ module.exports = {
 
   session: {
    adapter: 'mongo',
-   //url: "mongodb://127.0.0.1:27017"
-   url: process.env.MONGODB_URI
+   url: "mongodb://127.0.0.1:27017"
+   //url: process.env.MONGODB_URI
+   //url: "mongodb://heroku_h1wtj1w6:nio7sk6cd6il4gj4jfl0gdp2qg@ds149481.mlab.com:49481/heroku_h1wtj1w6"
   }
 
 };

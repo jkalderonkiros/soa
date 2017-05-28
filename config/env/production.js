@@ -18,17 +18,13 @@ module.exports = {
    ***************************************************************************/
 
   models: {
-   connection: 'mongolabDb'
+    connection: 'mongolabDb'
   },
 
   session: {
-   adapter: 'mongo',
-   url: process.env.MONGODB_URI
+    adapter: 'mongo',
+    url: process.env.MONGODB_URI
   }
-
-  // models: {
-  //   connection: 'someMysqlServer'
-  // },
 
   /***************************************************************************
    * Set the port in the production environment to 80                        *
