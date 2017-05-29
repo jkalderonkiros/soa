@@ -23,7 +23,17 @@ module.exports = {
 
   session: {
     adapter: 'mongo',
-    url: process.env.MONGODB_URI
+    url: process.env.MONGODB_URI,
+    port: 49481,
+    host: 'heroku_h1wtj1w6:nio7sk6cd6il4gj4jfl0gdp2qg@ds149481.mlab.com',
+    database: 'heroku_h1wtj1w6',
+    user: 'heroku_h1wtj1w6'
+    password: 'nio7sk6cd6il4gj4jfl0gdp2qg'
+    //   host: 'YOUR_POSTGRES_SERVER_HOSTNAME_OR_IP_ADDRESS',
+    //   user: 'YOUR_POSTGRES_USER', // optional
+    //   password: 'YOUR_POSTGRES_PASSWORD', // optional
+    //   database: 'YOUR_POSTGRES_DB' //optional
+    //url: "mongodb://heroku_h1wtj1w6:nio7sk6cd6il4gj4jfl0gdp2qg@ds149481.mlab.com:49481/heroku_h1wtj1w6"
   }
 
   /***************************************************************************
