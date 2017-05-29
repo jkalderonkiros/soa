@@ -5,8 +5,7 @@
   "description": "a Sails application",
   "keywords": [],
   "scripts": {
-    "debug": "node debug app.js",
-    "start": "node app.js"
+    "prestart": "npm install"
   },
   "dependencies": {
     "axios": "^0.16.1",
@@ -33,12 +32,15 @@
     "jsonwebtoken": "^7.3.0",
     "node-schedule": "^1.2.1",
     "rc": "1.0.1",
-    "sails": "git+https://github.com/balderdashy/sails.git",
+    "sails": "~0.12.13",
     "sails-disk": "~0.10.9",
-    "sails-hook-grunt": "^2.0.0",
     "sails-hook-jobs": "^0.1.6",
     "sails-mongo": "^0.12.2",
     "sendgrid": "^5.0.0"
+  },
+  "scripts": {
+    "debug": "node debug app.js",
+    "start": "node app.js"
   },
   "main": "app.js",
   "repository": {
