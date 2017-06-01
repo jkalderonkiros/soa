@@ -29,7 +29,6 @@ module.exports = {
 
     roles: {
       type: 'array',
-      //required: true,
       default: []
     },
 
